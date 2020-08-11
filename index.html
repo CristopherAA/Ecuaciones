@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Operaciones con Javascript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>
+        Ecuaciones de Segundo grado online.
+    </h1>
+    <form action="">
+        <input type="text" id="a"> x² + 
+        <input type="text" id="b"> x + 
+        <input type="text" id="c"> 
+        <input type="button" value="¡Calcular!" onclick="alert(resultado());">
+    </form>
+<script>
+    var resultado = function(){
+        var a = parseFloat(document.getElementById("a").value);
+        var b = parseFloat(document.getElementById("b").value);
+        var c = parseFloat(document.getElementById("c").value);
+
+        var bcuadrada = b * b;
+        var multi = 4 * a * c;
+        var dentro = bcuadrada - multi;
+        var raiz = Math.sqrt(dentro);
+        var arriba1 = -1 * b + raiz;
+        var abajo = 2 * a;
+        var arriba2 = -1 * b - raiz;
+
+        var operacion = "Solución 1 = " + arriba1 / abajo + 
+        " Solución 2 = " + arriba2 / abajo;
+        
+            
+       
+        return operacion;
+    };
+</script>
+</body>
+</html>
