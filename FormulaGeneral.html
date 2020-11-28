@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset UTF-8>
+    <title>Formula General en linea</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Fórmula General en línea</h1>
+    </header>
+    <form>
+        <input type="text" style="width: 75px; height: 25px" id="a">
+        <text> x² + </text>
+        <input type="text" style="width: 75px; height: 25px" id="b">
+        <text> x + </text>
+        <input type="text" style="width: 75px; height: 25px" id="c">
+        <input type="button" value="¡Calcular!" onclick="chicharronear()">
+    </form>
+    <script>
+        function chicharronear(){
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            if(!a || !b || !c){
+                alert("Rellena todos los campos");
+                return 0;
+            }
+            var discriminante = (b * b) - 4 * a * c;
+            if(discriminante<0){
+                document.write("<h2>¡No se puede resolver!</h2>");
+                document.write("<p> El discriminante es menor a cero </p>");
+            } else{
+                var x1 = ((-1 * b) + Math.sqrt(discriminante))/ (2 * a);
+                var x2 = ((-1 * b) - Math.sqrt(discriminante))/ (2 * a);
+                document.write("<h2>Solución 1: </h2>" + x1);
+                document.write("<h2> Solución 2: </h2>" + x2);
+            }
+            return 0;
+        }
+    </script>
+
+
+
+
+
+
+</body>
+</html>
