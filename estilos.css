@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+h1{
+  background-color: #581845;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0px;
+  border-bottom-style: solid;
+  border-bottom-color:#900C3F;
+  padding: 10px;
+}
+p{
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 10px;
+}
+.rest{
+  background-color: #FFC300;
+}
+form{
+  text-align: center;
+  font-family: Arial;
+  font-size: 1.25em;
+}
+.ini{
+  width: 3.5em;
+}

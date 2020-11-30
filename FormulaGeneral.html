@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset UTF-8>
+    <title>Formula General en linea</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Fórmula General en línea</h1>
+    </header>
+    </br></br>
+    <p>
+       Teclea los digitos de tu ecuación de segundo grado.
+    </p>
+    <form>
+        <input type="text" class="ini" id="a">
+        x² +
+        <input type="text" class="ini" id="b">
+        x +
+        <input type="text" class="ini" id="c">
+        = 0
+        </br></br>
+        <input type="button" value="¡Calcular!" onclick="chicharronear()">
+    </form>
+    </br></br></br>
+    <p id="parrafo" class="rest"> </p>
+    <script>
+        function chicharronear(){
+            var parrafo = document.getElementById("parrafo");
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            if(!a || !b ){
+                alert("Rellena todos los campos");
+                return 0;
+            }
+            var discriminante = (b * b) - 4 * a * c;
+            if(discriminante<0){
+               parrafo.innerHTML = "No se puede resolver";
+            }
+            else if(discriminante==0){
+                var x1 = ((-1 * b) + Math.sqrt(discriminante))/ (2 * a);
+                parrafo.innerHTML =  "Solo hay una solución: " + x1; 
+            } 
+            else{
+                var x1 = ((-1 * b) + Math.sqrt(discriminante))/ (2 * a);
+                var x2 = ((-1 * b) - Math.sqrt(discriminante))/ (2 * a);
+                parrafo.innerHTML = "La solución uno es: " + x1 +"</br> La solución dos es: " + x2;
+            }
+            return 0;
+        }
+    </script>
+
+
+</body>
+</html>
